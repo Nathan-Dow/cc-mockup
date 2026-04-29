@@ -23,7 +23,7 @@ export const Services = () => {
     <section id="services" className="relative bg-background py-24 md:py-36">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div>
+          <div className="shrink-0">
             <div className="flex items-center gap-4">
               <span className="red-bar" />
               <span className="eyebrow">Our Services</span>
@@ -32,7 +32,7 @@ export const Services = () => {
               Specialised. <span className="text-primary">Uncompromised.</span>
             </h2>
           </div>
-          <p className="max-w-sm text-foreground/70">
+          <p className="max-w-xs text-foreground/70 md:text-right">
             Every service is performed by manufacturer-certified technicians using
             calibrated, OEM-grade equipment. No shortcuts.
           </p>
