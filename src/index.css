@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Customers Cradle — Premium automotive design system.
+   Deep Charcoal · Racing Red · Off-White. All colors HSL. */
+
+@layer base {
+  :root {
+    --background: 240 6% 6%;
+    --foreground: 0 0% 96%;
+
+    --surface: 240 5% 9%;
+    --surface-elevated: 240 5% 11%;
+
+    --card: 240 5% 9%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 240 6% 6%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 358 100% 44%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 358 100% 56%;
+
+    --secondary: 240 5% 11%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 240 5% 14%;
+    --muted-foreground: 0 0% 62%;
+
+    --accent: 358 100% 44%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 358 100% 44%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 5% 16%;
+    --input: 240 5% 14%;
+    --ring: 358 100% 44%;
+
+    --radius: 0.25rem;
+
+    --gradient-hero: linear-gradient(180deg, hsl(240 6% 6% / 0) 0%, hsl(240 6% 6% / 0.4) 40%, hsl(240 6% 6% / 0.95) 100%);
+    --gradient-red: linear-gradient(135deg, hsl(358 100% 44%), hsl(358 100% 36%));
+    --shadow-red: 0 20px 40px -15px hsl(358 100% 44% / 0.45);
+    --shadow-elevated: 0 30px 60px -20px hsl(0 0% 0% / 0.7);
+
+    --font-display: 'Archivo', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    --sidebar-background: 240 6% 6%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 358 100% 44%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 5% 11%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 240 5% 16%;
+    --sidebar-ring: 358 100% 44%;
+  }
+
+  .dark {
+    --background: 240 6% 6%;
+    --foreground: 0 0% 96%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  ::selection {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: hsl(var(--muted-foreground));
+  }
+  .red-bar {
+    display: inline-block;
+    width: 2.5rem;
+    height: 2px;
+    background: hsl(var(--primary));
+    vertical-align: middle;
+  }
+  .hero-vignette {
+    background: var(--gradient-hero);
+  }
+  .marquee-track {
+    animation: marquee 35s linear infinite;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .pulse-ring::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 9999px;
+    border: 2px solid hsl(var(--primary));
+    animation: pulseRing 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  @keyframes pulseRing {
+    0%   { transform: scale(1);   opacity: 0.7; }
+    100% { transform: scale(1.6); opacity: 0; }
+  }
+  .grain {
+    background-image: radial-gradient(hsl(0 0% 100% / 0.015) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
+}
