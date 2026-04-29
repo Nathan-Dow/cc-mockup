@@ -12,7 +12,7 @@ import { FloatingBook } from "@/components/cradle/FloatingBook";
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-background text-foreground" onContextMenu={(e) => e.preventDefault()}>
       <Nav />
       <Hero />
       <Marquee />
@@ -24,6 +24,20 @@ const Index = () => {
       <Booking />
       <Footer />
       <FloatingBook />
+      <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
+        {Array.from({ length: 12 }).map((_, i) => (
+          <span
+            key={i}
+            className="absolute select-none font-display text-[clamp(1.5rem,4vw,3rem)] font-black uppercase tracking-widest text-white/10 rotate-[-35deg] whitespace-nowrap"
+            style={{
+              left: `${(i % 3) * 36 - 5}%`,
+              top: `${Math.floor(i / 3) * 26 - 5}%`,
+            }}
+          >
+            Hinara Solutions
+          </span>
+        ))}
+      </div>
     </main>
   );
 };
