@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { Nav } from "@/components/cradle/Nav";
 import { Hero } from "@/components/cradle/Hero";
 import { Marquee } from "@/components/cradle/Marquee";
@@ -24,6 +25,7 @@ const Index = () => {
       <Booking />
       <Footer />
       <FloatingBook />
+      <Analytics />
       <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
         {Array.from({ length: 12 }).map((_, i) => (
           <span
