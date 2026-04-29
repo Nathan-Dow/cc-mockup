@@ -12,7 +12,7 @@ import { FloatingBook } from "@/components/cradle/FloatingBook";
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-background text-foreground" onContextMenu={(e) => e.preventDefault()}>
       <Nav />
       <Hero />
       <Marquee />
